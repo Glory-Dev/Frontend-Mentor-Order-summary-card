@@ -1,0 +1,125 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --main-gap: 50px;
+  --border-radius: 15px;
+  --timing-function: 0.3s;
+  /* Colors */
+  --dark-blue: hsl(223, 47%, 23%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue-hover: hsl(245deg 75% 52% / 80%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+}
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "Red Hat Display", sans-serif;
+  background: hsl(225, 100%, 94%) url("images/pattern-background-desktop.svg")
+    no-repeat;
+  background-size: contain;
+}
+@media (max-width: 767px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+}
+.card {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--very-pale-blue);
+  box-shadow: 5px 20px 30px hsl(223 47% 23% / 80%);
+}
+
+.card > .content {
+  text-align: center;
+  padding: var(--main-gap);
+}
+@media (max-width: 767px) {
+  .card {
+    width: 350px;
+  }
+  .card > .content {
+    padding: 30px;
+  }
+}
+.header > img {
+  max-width: 100%;
+}
+.card > .content > .text h1 {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+.card > .content > .text p {
+  max-width: 300px;
+  margin: 30px auto var(--main-gap);
+  line-height: 1.6;
+  color: var(--desaturated-blue);
+}
+.card > .content > .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--main-gap);
+}
+.card > .content > .price > .plan {
+  display: flex;
+}
+.card > .content > .price > .plan h2 {
+  font-size: 18px;
+  margin-left: 20px;
+  color: var(--dark-blue);
+}
+.card > .content > .price > .plan h2 > span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--desaturated-blue);
+}
+.card > .content > .price > .change {
+  font-weight: bold;
+  color: hsl(245, 75%, 52%);
+  transition: color var(--timing-function);
+}
+.card > .content > .price > .change:hover {
+  text-decoration: none;
+  color: var(--bright-blue-hover);
+}
+.card > .content > .process {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: hsl(225, 100%, 94%);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background-color: hsl(245, 75%, 52%);
+  box-shadow: 0 20px 10px hsl(225deg 100% 94%);
+  transition: background-color var(--timing-function);
+}
+.card > .content > .process:focus {
+  outline: none;
+}
+.card > .content > .process:hover {
+  background-color: var(--bright-blue-hover);
+}
+.card > .content > .cancel {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--desaturated-blue);
+  transition: color var(--timing-function);
+}
+.card > .content > .cancel:hover {
+  color: var(--dark-blue);
+}
