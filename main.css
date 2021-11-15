@@ -14,15 +14,15 @@
   --desaturated-blue: hsl(224, 23%, 55%);
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
-  --bright-blue-hover: hsl(245deg 75% 52% / 80%);
   --very-pale-blue: hsl(225, 100%, 98%);
+  --bright-blue-hover: hsl(245deg 75% 52% / 80%);
 }
 body {
   display: grid;
   place-content: center;
   min-height: 100vh;
   font-family: "Red Hat Display", sans-serif;
-  background: hsl(225, 100%, 94%) url("images/pattern-background-desktop.svg")
+  background: var(--pale-blue) url("images/pattern-background-desktop.svg")
     no-repeat;
   background-size: contain;
 }
@@ -70,6 +70,7 @@ body {
   justify-content: space-between;
   padding: 20px;
   margin-bottom: var(--main-gap);
+  border-radius: var(--border-radius);
   background-color: var(--very-pale-blue);
 }
 .card > .content > .price > .plan {
@@ -88,7 +89,7 @@ body {
 }
 .card > .content > .price > .change {
   font-weight: bold;
-  color: hsl(245, 75%, 52%);
+  color: var(--bright-blue);
   transition: color var(--timing-function);
 }
 .card > .content > .price > .change:hover {
@@ -101,11 +102,11 @@ body {
   margin-bottom: 20px;
   padding: 20px;
   font-weight: bold;
-  color: hsl(225, 100%, 94%);
+  color: var(--very-pale-blue);
   border: none;
   cursor: pointer;
   border-radius: var(--border-radius);
-  background-color: hsl(245, 75%, 52%);
+  background-color: var(--bright-blue);
   box-shadow: 0 20px 10px hsl(225deg 100% 94%);
   transition: background-color var(--timing-function);
 }
