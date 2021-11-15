@@ -6,7 +6,7 @@
   margin: 0;
 }
 :root {
-  --main-gap: 50px;
+  --main-gap: 30px;
   --border-radius: 15px;
   --timing-function: 0.3s;
   /* Colors */
@@ -33,9 +33,9 @@ body {
 }
 .card {
   overflow: hidden;
+  background-color: white;
   border-radius: var(--border-radius);
-  background-color: var(--very-pale-blue);
-  box-shadow: 5px 20px 30px hsl(223 47% 23% / 80%);
+  box-shadow: 5px 20px 30px hsl(223 47% 23% / 10%);
 }
 
 .card > .content {
@@ -68,7 +68,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px;
   margin-bottom: var(--main-gap);
+  background-color: var(--very-pale-blue);
 }
 .card > .content > .price > .plan {
   display: flex;
