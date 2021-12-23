@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --border-radius: 15px;
+  --timing-function: 0.3s;
+  // Colors
+  --dark-blue: hsl(223, 47%, 23%);
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --bright-blue-hover: hsl(245deg 75% 52% / 80%);
+}
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-family: "Red Hat Display", sans-serif;
+  background: var(--pale-blue) url("../images/pattern-background-desktop.svg")
+    no-repeat {
+      size: contain;
+    };
+  @media ($mobile) {
+    background-image: url("../images/pattern-background-mobile.svg");
+  }
+}
+

@@ -1,0 +1,108 @@
+// Media Queries
+$mobile: "max-width: 767px";
+$desktop: "min-width: 768px";
+// Import Global Rules
+@import "_global-rules";
+
+.card {
+  overflow: hidden;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 5px 20px 30px hsla(223, 47%, 23%, 0.1);
+  @media ($mobile) {
+    width: 350px;
+  }
+
+  > .header {
+    > img {
+      max-width: 100%;
+    }
+  }
+  > .content {
+    padding: 20px;
+    text-align: center;
+    @media ($mobile) {
+      padding: 30px;
+    }
+
+    > .text {
+      h3 {
+        font-size: 35px;
+        font-weight: 900;
+        color: var(--dark-blue);
+      }
+      p {
+        max-width: 300px;
+        line-height: 1.6;
+        color: var(--desaturated-blue);
+        margin: 30px auto;
+      }
+    }
+    > .price {
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: var(--border-radius);
+      background-color: var(--very-pale-blue);
+      // Flex
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      > .plan {
+        display: flex;
+
+        h2 {
+          font-size: 18px;
+          margin-left: 20px;
+          color: var(--dark-blue);
+
+          > span {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            color: var(--desaturated-blue);
+          }
+        }
+      }
+      > .change {
+        font-weight: bold;
+        color: var(--bright-blue);
+        transition: color var(--timing-function);
+        &:hover {
+          text-decoration: none;
+          color: var(--bright-blue-hover);
+        }
+      }
+    }
+    > .process {
+      display: block;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      padding: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: var(--very-pale-blue);
+      border-radius: var(--border-radius);
+      background-color: var(--bright-blue);
+      box-shadow: 0 20px 10px var(--pale-blue);
+      transition: background-color var(--timing-function);
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: var(--bright-blue-hover);
+      }
+    }
+    > .cancel {
+      font-weight: bold;
+      text-decoration: none;
+      background-color: transparent;
+      color: var(--desaturated-blue);
+      transition: color var(--timing-function);
+      &:hover {
+        color: var(--dark-blue);
+      }
+    }
+  }
+}
